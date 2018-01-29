@@ -11,11 +11,20 @@ public class Boss
     //Magic function
     public void Magic()
     {
+        /* for my own testing purpose, please ignore 
+        for(int mp = 53; mp >= 5; mp -= 5)
+        {
+            Debug.Log("魔法攻撃をした。残りMPは" + mp);
+        }
+        Debug.Log("MPが足りないため魔法が使えない。");
+        */
+
         //decrease mp when spell
+        //Left hand side is before spelling mp -= spell cost
         this.mp -= spell;
 
         
-     if(mp >= 5)
+     if(mp >= 0) //Here is after spelling MP, so mp >= 0 
      {
          Debug.Log("魔法攻撃をした。残りMPは" + mp);
      }
@@ -24,7 +33,6 @@ public class Boss
          Debug.Log("MPが足りないため魔法が使えない。");
      }
      
-
     }
 
 
@@ -50,8 +58,9 @@ public class Test : MonoBehaviour
         boss.Magic();
         boss.Magic();
         boss.Magic();
+        boss.Magic();
 
-        //そんな馬鹿に10回貼り付けじゃないでしょう？
+        
 
 
         /*
